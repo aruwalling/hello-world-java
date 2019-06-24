@@ -1,6 +1,6 @@
 package aruw.bean;
 
-public class Automobiles implements Vehicle{
+public class Automobile extends Vehicle{
 
     private int wheels;
 
