@@ -1,7 +1,5 @@
 package aruw.bean;
 
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
-
 public class GasolineEngine extends Engine implements GasTank {
 
     private int cylinder;
@@ -22,9 +20,11 @@ public class GasolineEngine extends Engine implements GasTank {
     protected void intakeStroke(){
         System.out.println("Getting air......");
     }
-    protected void compressionStroke(int level){
+
+    protected double compressionStroke(int level){
         //getGas(level);
         System.out.println("compressing air and gasoline......");
+        return 0.0;
     }
     protected void combustionStroke(){
         System.out.println("a ......");
@@ -39,9 +39,11 @@ public class GasolineEngine extends Engine implements GasTank {
     @java.lang.Override
     public double generatePowerInCycle(int level) {
         intakeStroke();
-        compressionStroke(level);
+        double power=compressionStroke(level);
         combustionStroke();
         exhaustStroke();
+
+        return power;
     }
 
     @Override
