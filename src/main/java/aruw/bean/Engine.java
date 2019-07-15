@@ -4,7 +4,7 @@ public abstract class Engine {
 
     private double hp;
 
-    public abstract  double generatePower(double source);
+    public abstract  double generatePowerInCycle(int level);
 
     public double getHp() {
         return hp;
